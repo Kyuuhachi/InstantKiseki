@@ -1,0 +1,19 @@
+[package]
+name = "instantkiseki"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "InstantKiseki"
+crate-type = ["cdylib"]
+
+[dependencies]
+memchr = "2.7"
+region = "3.0"
+
+[profile.release]
+codegen-units = 1
+strip = true
+opt-level = "z"
+lto = true
+panic = "abort"
